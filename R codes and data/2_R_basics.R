@@ -75,7 +75,7 @@ str(ls)
 
 # Reading a data ---------------------------------------------------------
 
-dat <- read.csv("diabetes.csv")
+dat <- read.csv("R codes and data/diabetes.csv")
 
 head(dat)
 summary(dat)
