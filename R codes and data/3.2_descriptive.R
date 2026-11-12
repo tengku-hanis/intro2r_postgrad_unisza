@@ -62,3 +62,19 @@ iris %>%
   filter(Sepal.Length > 6) %>% 
   count(Species)
 
+
+# gtsummary --------------------------------------------------------------
+
+library(gtsummary)
+
+# Basic table
+tbl_summary(iris)
+
+# Edit a little bit
+iris %>%
+  tbl_summary(
+    # Change continuous variables to mean (SD)
+    statistic = list(all_continuous() ~ "{mean} ({sd})")
+  ) %>%
+  # Update the column header to use lowercase n
+  modify_header(all_stat_cols() ~ "**n = {N}**")
